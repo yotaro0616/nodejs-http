@@ -60,7 +60,7 @@ const server = http
             const food = answer.get('favorite');
             const message = `${name}さんは${food}に投稿しました`;
             res.write(`<h1>${message}</h1>`);
-            console.info(`[${now}] ${message}`);
+            console.info(`${message}`);
             res.end();
           })
         break;
