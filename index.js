@@ -3,9 +3,8 @@ const http = require('node:http');
 const pug = require('pug');
 const server = http
   .createServer((req, res) => {
-    const now =new Date();
     console.info(
-      `みーつけた[${now}] Requested by ${req.socket.remoteAddress}`
+      `みーつけた[Requested by ${req.socket.remoteAddress}`
     );
     res.writeHead(200, {
       'Content-Type': 'text/html; charset=utf-8'
@@ -69,10 +68,10 @@ const server = http
     }
   })
   .on('error', e => {
-    console.error(`[${new Date()}] Server Error`, e);
+    console.error(`Server Error`, e);
   })
   .on('clientError', e => {
-    console.error(`[${new Date()}] Client Error`, e);
+    console.error(`Client Error`, e);
   });
 const port = process.env.PORT || 8000;
 server.listen(port, () => {
